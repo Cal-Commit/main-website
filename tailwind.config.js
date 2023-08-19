@@ -7,6 +7,9 @@ module.exports = withMT({
       fontFamily: {
         "dm-sans": ["DM Sans", "sans-serif"] 
         
+      },
+      colors: {
+        'calcommit-orange': '#db8a74',
       }
     },
   },

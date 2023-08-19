@@ -82,13 +82,13 @@ function CCNavbar() {
           <div className="mr-4 hidden lg:block">{navList}</div>
           <Button
             size="sm"
-            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-deep-orange-400 text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-white hover:border-deep-orange-400 hover:text-black"
+            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-calcommit-orange text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-white hover:border-deep-orange-400 hover:text-black"
           >
             <span>Sign Up</span>
           </Button>
           <Button
             size="sm"
-            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-white text-black border-2 border-deep-orange-400 font-dm-sans text-lg capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-deep-orange-400 hover:text-white"
+            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-white text-black border-2 border-calcommit-orange font-dm-sans text-lg capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-deep-orange-400 hover:text-white"
           >
             <span>Sign In</span>
           </Button>
