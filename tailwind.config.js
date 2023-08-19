@@ -5,7 +5,8 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        "dm-sans": ["DM Sans", "sans-serif"] 
+        "dm-sans": ["DM Sans", "sans-serif"],
+        "dela-gothic": ["Dela Gothic One", "cursive"] 
         
       },
       colors: {
