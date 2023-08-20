@@ -29,7 +29,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-deep-orange-400 transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -40,7 +40,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-deep-orange-400 transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -51,7 +51,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-deep-orange-400 transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -62,7 +62,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-deep-orange-400 transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
         </Link>
       </Typography>
     </ul>
@@ -73,7 +73,7 @@ function CCNavbar() {
         <Typography
           as="a"
           href="#"
-          className="flex items-center transition-all duration-300 ease-in-out mr-4 cursor-pointer py-1.5 font-black font-dm-sans text-gray-900 text-3xl bg-gray-50 backdrop-blur-md rounded-lg shadow-sm p-2 md:hover:scale-105 md:hover:shadow-lg md:hover:-rotate-12"
+          className="flex items-center transition-all duration-300 ease-in-out mr-4 cursor-pointer py-1.5 font-black font-dela-gothic text-gray-900 text-3xl bg-gray-50 backdrop-blur-md rounded-lg shadow-sm p-2 md:hover:scale-105 md:hover:shadow-lg md:hover:-rotate-12"
         >
           <img src={logo} alt="Cal Commit" className="h-10 w-auto mr-2" /> Cal
           Commit
@@ -82,13 +82,13 @@ function CCNavbar() {
           <div className="mr-4 hidden lg:block">{navList}</div>
           <Button
             size="sm"
-            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-calcommit-orange text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-white hover:border-deep-orange-400 hover:text-black"
+            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-calcommit-orange text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-white hover:border-calcommit-orange hover:text-black"
           >
             <span>Sign Up</span>
           </Button>
           <Button
             size="sm"
-            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-white text-black border-2 border-calcommit-orange font-dm-sans text-lg capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-deep-orange-400 hover:text-white"
+            className="hidden transition-all duration-300 ease-in-out shadow-md lg:inline-block bg-white text-black border-2 border-calcommit-orange font-dm-sans text-lg capitalize hover:scale-105 hover:rotate-6 hover:shadow-lg hover:bg-calcommit-orange hover:text-white"
           >
             <span>Sign In</span>
           </Button>
