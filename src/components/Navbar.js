@@ -29,7 +29,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -40,7 +40,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -51,7 +51,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
         </Link>
       </Typography>
       <Typography
@@ -62,7 +62,7 @@ function CCNavbar() {
       >
         <Link to="/pages" className="relative group">
           <span>Placeholder</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
         </Link>
       </Typography>
     </ul>
