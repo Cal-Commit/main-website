@@ -29,7 +29,7 @@ function VolunteerWithUs() {
 
         <div className="transform hover:scale-105 transition-transform duration-300 md:w-2/5">
           <img
-            src="bears.png"
+            src="polarbear.png"
             alt="Volunteers Image"
             className="rounded-md shadow-lg w-full h-auto"
           />
