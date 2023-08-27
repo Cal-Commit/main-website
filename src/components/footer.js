@@ -10,7 +10,7 @@ function CCFooter() {
           <Typography
             as="a"
             href="#"
-            className="flex items-center transition-all duration-300 bg-gray-100 ease-in-out mr-4 cursor-pointer py-1.5 font-black font-dela-gothic text-gray-900 text-3xl backdrop-blur-md rounded-lg shadow-sm p-2 md:hover:scale-105 md:hover:shadow-lg md:hover:-rotate-12"
+            className="flex items-center transition-all duration-300 ease-in-out mr-4 cursor-pointer py-1.5 font-black font-dela-gothic text-gray-900 text-3xl backdrop-blur-md rounded-lg shadow-sm p-2 "
           >
             <img src={logo} alt="Cal Commit" className="h-10 w-auto mr-2" /> Cal
             Commit
