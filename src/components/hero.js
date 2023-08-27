@@ -1,22 +1,52 @@
 import React from 'react';
 import { Button } from '@material-tailwind/react';
-import logo from '../static/img/Cal Commit Logo.svg';  
+import logo from '../static/img/Cal Commit Logo.svg';
+import { motion } from 'framer-motion';
+
+const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } }
+};
+
+const slideUp = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 1 } }
+};
 
 function Hero() {
     return (
         <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 w-full h-screen flex flex-col justify-center">
             <div className="container mx-auto text-center">
-                <img src={logo} alt="Cal Commit" className="h-32 w-auto mx-auto mb-8 rounded-full shadow-lg" />
 
-                <h1 className="text-gray-900 text-4xl font-bold font-dela-gothic mb-4">
+                <motion.img 
+                    src={logo} 
+                    alt="Cal Commit" 
+                    className="bg-gray-100 h-32 w-auto mx-auto mb-8 rounded-full shadow-lg"
+                    variants={fadeIn}
+                    initial="hidden"
+                    animate="visible"
+                />
+
+                <motion.h1 
+                    className="text-gray-900 text-4xl font-bold font-dela-gothic mb-4"
+                    variants={slideUp}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.5 }}
+                >
                     Cal Commit
-                </h1>
+                </motion.h1>
                 
-                <p className="text-blue-gray-900 text-xl font-semibold mb-8">
-                    Teaching Students the World of Collaboration
-                </p>
+                <motion.p 
+                    className="text-blue-gray-900 text-xl font-semibold mb-8"
+                    variants={slideUp}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.8 }}
+                >
+                    Teaching Students the World of <b>Collaboration</b>
+                </motion.p>
 
-                
             </div>
         </div>
     );
