@@ -13,7 +13,7 @@ const fadeInFromRight = {
     visible: { opacity: 1, x: 0, transition: { duration: 1 } }
 };
 
-function AboutUs() {
+function Mission() {
     const controlsText = useAnimation();
     const controlsImage = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.1 });
@@ -55,7 +55,7 @@ function AboutUs() {
                     animate={controlsImage}
                     variants={fadeInFromRight}
                 >
-                    <img src="bears.png" alt="About Image" className="rounded-md shadow-lg w-full h-auto" />
+                    <img src="bears.png" alt="About Cal Commit" className="rounded-md shadow-lg w-full h-auto" />
                 </motion.div>
 
             </div>
@@ -63,4 +63,4 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
+export default Mission;

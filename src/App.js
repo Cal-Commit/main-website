@@ -1,18 +1,18 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/hero";
-import CCFooter from "./components/footer";
-import AboutUs from "./components/about";
-import VolunteerWithUs from "./components/volunteer";
+import CCFooter from "./components/Footer";
+import AboutPage from "./pages/AboutPage";
+import IndexPage from "./pages/IndexPage";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />      
-      <AboutUs />
-      <VolunteerWithUs />
+      <Routes>
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/" element={<IndexPage /> } />
+      </Routes>
       <CCFooter />
     </>
   );
