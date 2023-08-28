@@ -33,7 +33,7 @@ const teamMembers = [
   {
     name: "Srinikesh Kanneluru",
     image:
-      "https://cdn.discordapp.com/attachments/1050157259134611476/1122609138292228156/Professinoal_Profile_Pic.png",
+      "https://static.wixstatic.com/media/8a7384_c52993baccf54e93910fdc7209a023db~mv2.jpeg/v1/crop/x_0,y_33,w_1213,h_1215/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/image0.jpeg",
     position: "Vice President",
   },
   {
@@ -62,10 +62,25 @@ const teamMembers = [
     position: "Activities Coordinator",
   },
 ];
+
+export default function OurTeam() {
+  return (
+    <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-10 sm:py-16 lg:py-20 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-filter backdrop-blur-lg bg-white bg-opacity-70">
+      <h2 className="justify-center flex text-gray-900 text-2xl sm:text-3xl font-bold font-dela-gothic mb-4">Our Team</h2>
+
+      <div className="max-w-full w-full mx-auto flex flex-wrap justify-center gap-4">
+        {teamMembers.map((member, index) => (
+          <ProfileCard key={index} member={member} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProfileCard({ member }) {
   return (
-    <Card className="font-dm-sans w-1/5 mx-2 my-4 flex flex-col justify-between">
-      <CardHeader floated={false} className="h-80">
+    <Card className="font-dm-sans w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-2 my-4 flex flex-col justify-between">
+      <CardHeader floated={false} className="h-48 sm:h-64 md:h-80">
         <img
           src={member.image}
           alt="profile-picture"
@@ -73,10 +88,10 @@ function ProfileCard({ member }) {
         />
       </CardHeader>
       <CardBody className="text-center p-4">
-        <Typography variant="h4" color="blue-gray" className=" font-dm-sans mb-2">
+        <Typography variant="h4" color="blue-gray" className="font-dm-sans mb-2">
           {member.name}
         </Typography>
-        <Typography color="blue-gray" className=" font-dm-sans font-medium" textGradient>
+        <Typography color="blue-gray" className="font-dm-sans font-medium" textGradient>
           {member.position}
         </Typography>
       </CardBody>
@@ -120,21 +135,8 @@ function ProfileCard({ member }) {
               <i className="fab fa-instagram" />
             </Typography>
           </Tooltip>
-        )}{" "}
+        )}
       </CardFooter>
     </Card>
-  );
-}
-export default function OurTeam() {
-  return (
-    <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-20 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-filter: blur(5px) bg-white bg-opacity-70">
-            <h2 className="justify-center flex text-gray-900 text-3xl font-bold font-dela-gothic mb-4">Our Team</h2>
-
-      <div className="max-w-full w-full mx-auto flex flex-wrap justify-center items-stretch">
-        {teamMembers.map((member, index) => (
-          <ProfileCard key={index} member={member} />
-        ))}
-      </div>
-    </div>
   );
 }
