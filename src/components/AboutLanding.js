@@ -3,7 +3,7 @@ import React from 'react';
 function AboutLandingComp() {
     return (
         <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-20 px-4 md:px-8 lg:px-8 xl:px-16 backdrop-filter: blur(5px) bg-white bg-opacity-70">
-        <div className="max-w-full w-11/12 lg:w-4/5 mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-20 max-w-full w-11/12 lg:w-4/5 mx-auto flex flex-col md:flex-row justify-between items-center">
             
             <div className="mb-8 md:mb-0 md:w-2/5">
                 <h1 className="text-gray-900 text-5xl font-bold font-dela-gothic mb-4">The Mission Behind Cal Commit</h1>

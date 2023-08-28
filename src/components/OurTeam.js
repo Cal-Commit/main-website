@@ -27,6 +27,8 @@ const teamMembers = [
       "https://cdn.discordapp.com/attachments/997774498973626418/1122391117296570449/IMG_4747.jpg",
     position: "Vice President",
     portfolio: "https://adityasahas.tech",
+    twitter: "https://twitter.com/adityasahas",
+    instagram: "https://instagram.com/bababooeyacc",
   },
   {
     name: "Srinikesh Kanneluru",
@@ -63,7 +65,7 @@ const teamMembers = [
 function ProfileCard({ member }) {
   return (
     <Card className="font-dm-sans w-1/5 mx-2 my-4 flex flex-col justify-between">
-      <CardHeader floated={false} className="h-80 p-4">
+      <CardHeader floated={false} className="h-80">
         <img
           src={member.image}
           alt="profile-picture"
@@ -83,6 +85,7 @@ function ProfileCard({ member }) {
           <Tooltip content="Portfolio">
             <Typography
               as="a"
+              target="_blank"
               href={member.portfolio}
               variant="lead"
               color="blue"
@@ -93,7 +96,7 @@ function ProfileCard({ member }) {
           </Tooltip>
         )}
         {member.twitter && (
-          <Tooltip content="Follow">
+          <Tooltip content="Twitter">
             <Typography
               as="a"
               href={member.twitter}
@@ -106,7 +109,7 @@ function ProfileCard({ member }) {
           </Tooltip>
         )}
         {member.instagram && (
-          <Tooltip content="Follow">
+          <Tooltip content="Instagram">
             <Typography
               as="a"
               href={member.instagram}
@@ -125,6 +128,8 @@ function ProfileCard({ member }) {
 export default function OurTeam() {
   return (
     <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-20 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-filter: blur(5px) bg-white bg-opacity-70">
+            <h2 className="justify-center flex text-gray-900 text-3xl font-bold font-dela-gothic mb-4">Our Team</h2>
+
       <div className="max-w-full w-full mx-auto flex flex-wrap justify-center items-stretch">
         {teamMembers.map((member, index) => (
           <ProfileCard key={index} member={member} />
