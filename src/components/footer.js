@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 import logo from "../static/img/Cal Commit Logo.svg";
 
-function CCFooter() {
+function Footer() {
   return (
     <footer className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 border border-white py-4 px-8 rounded-md shadow-lg backdrop-filter: blur(5px) bg-white bg-opacity-70">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
@@ -76,4 +76,4 @@ function CCFooter() {
   );
 }
 
-export default CCFooter;
+export default Footer;
