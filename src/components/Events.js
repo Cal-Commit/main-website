@@ -170,13 +170,13 @@ export default function OurEvents() {
           </Carousel>
 
           <div className="w-full md:ml-8 mt-6 md:mt-0 flex flex-col justify-center">
-            <Typography variant="h4" color="blue-gray" className="mb-2">
+            <Typography variant="h4" color="blue-gray" className="font-dm-sans mb-2">
               {event.name}
             </Typography>
-            <Typography variant="h6" color="blue-gray" className="mb-4">
+            <Typography variant="h6" color="blue-gray" className="font-dm-sans mb-4">
               {event.date}
             </Typography>
-            <Typography color="blue-gray">{event.info}</Typography>
+            <Typography color="blue-gray"className="font-dm-sans">{event.info}</Typography>
           </div>
         </div>
       ))}
