@@ -13,6 +13,7 @@ import {
   Tab,
   TabsBody,
   TabPanel,
+  Alert,
 } from "@material-tailwind/react";
 import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
@@ -34,6 +35,7 @@ export default function JoinTeam() {
   const [lastSubmitted, setLastSubmitted] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [debouncedIsSubmitting] = useDebounce(isSubmitting, 5000);
+  const [alertVisible, setAlertVisible] = useState(false); 
 
   const positions = [
     {
@@ -166,6 +168,7 @@ export default function JoinTeam() {
         discordEmbed
       );
       console.log("Successfully sent to Discord");
+      setAlertVisible(true);
       setTimeout(() => setDisableSubmit(false), 5000);
     } catch (error) {
       console.error("Failed to send to Discord", error);
@@ -179,6 +182,12 @@ export default function JoinTeam() {
 
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 backdrop-filter backdrop-blur-md">
+      {alertVisible && (
+        <Alert           className="absolute bottom-4 right-4 w-1/4 z-50"
+        onClose={() => setAlertVisible(false)}>
+          Successfully submitted! Thank you for applying.
+        </Alert>
+      )}
       <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60">
         <Card
           color="transparent"
