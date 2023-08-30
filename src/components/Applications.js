@@ -111,14 +111,24 @@ export default function JoinTeam() {
   }, [watchedFields, currentTab, positions]);
 
   const submitHandler = () => {
+    const currentQuestions = positions.find(pos => pos.label === currentTab)?.questions.map(q => q.name) || [];
+  
+    const filteredData = Object.keys(watchedFields)
+      .filter(key => currentQuestions.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = watchedFields[key];
+        return obj;
+      }, {});
+  
     const data = {
-      ...watchedFields,
+      ...filteredData,
       position: currentTab,
     };
+  
     console.log("onSubmit");
     console.log(data);
   };
-
+  
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 backdrop-filter backdrop-blur-md">
       <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60">
