@@ -15,10 +15,17 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { useForm, Controller } from "react-hook-form";
-import SmoothProgressBar from "./ProgressBar"; 
+import SmoothProgressBar from "./ProgressBar";
 
 export default function JoinTeam() {
-  const { register, handleSubmit, control, watch, setValue, formState: { isValid } } = useForm({ mode: 'onChange' });
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    setValue,
+    formState: { isValid },
+  } = useForm({ mode: "onChange" });
 
   const [currentTab, setCurrentTab] = useState("Developer");
   const [progress, setProgress] = useState(0);
@@ -43,7 +50,7 @@ export default function JoinTeam() {
           type: "Select",
           label: "Experience Level",
           name: "devExp",
-          options: ["Junior", "Mid", "Senior"],
+          options: ["Junior", "Mid", "Senior", "Expert", "Ninja"],
         },
         { type: "Checkbox", label: "Familiar with Git", name: "devGit" },
         {
@@ -72,7 +79,7 @@ export default function JoinTeam() {
           type: "Select",
           label: "Experience Level",
           name: "mktgExp",
-          options: ["Junior", "Mid", "Senior"],
+          options: ["Junior", "Mid", "Senior", "Expert", "Ninja"],
         },
         {
           type: "Checkbox",
@@ -96,15 +103,19 @@ export default function JoinTeam() {
   useEffect(() => {
     const currentQuestions =
       positions.find((pos) => pos.label === currentTab)?.questions || [];
+
+    console.log(watchedFields);
     const filledFields = currentQuestions.filter(
       (q) => watchedFields[q.name]
     ).length;
     setProgress((filledFields / currentQuestions.length) * 100);
+    console.log(filledFields);
   }, [watchedFields, currentTab, positions]);
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("Application Data:", data);
   };
+  
 
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 backdrop-filter backdrop-blur-md">
@@ -114,14 +125,17 @@ export default function JoinTeam() {
           shadow={false}
           className="backdrop-blur-md w-full md:w-1/4 p-4 rounded-xl mb-8 md:mb-0"
         >
-          <Typography variant="h4" className="text-gray-900 text-3xl font-bold font-dela-gothic mb-4">
+          <Typography
+            variant="h4"
+            className="text-gray-900 text-3xl font-bold font-dela-gothic mb-4"
+          >
             Volunteer Benefits
           </Typography>
           <ul className="font-dm-sans">
-            <li>Networking opportunities</li>
+            <li>Presidential Volunteer Service Award</li>
             <li>Free training and workshops</li>
             <li>Letters of recommendation</li>
-            <li>Flexible work hours</li>
+            <li>Get volunteer hours</li>
             <li>Experience for your resume</li>
           </ul>
         </Card>
@@ -143,13 +157,11 @@ export default function JoinTeam() {
                 </Tab>
               ))}
             </TabsHeader>
-            <TabsBody  className="w-full flex-auto">
+            <TabsBody className="w-full flex-auto">
               {positions.map(({ label, questions }) => (
                 <TabPanel key={label} value={label} className="w-full h-full">
-                  <form
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="h-full flex flex-col space-y-4"
-                  >
+                  <form onSubmit={handleSubmit(onSubmit)} className="h-full flex flex-col space-y-4">
+
                     {questions.map((question, index) => {
                       switch (question.type) {
                         case "Input":
@@ -214,21 +226,28 @@ export default function JoinTeam() {
                               key={index}
                               name={question.name}
                               control={control}
-                              render={({ field }) => (
-                                <Select
-                                  label={question.label}
-                                  {...field}
-                                  className="font-dm-sans"
-                                  size="lg"
-                                  
-                                >
-                                  {question.options.map((option, i) => (
-                                    <Option key={i} className="font-dm-sans">
-                                      {option}
-                                    </Option>
-                                  ))}
-                                </Select>
-                              )}
+                              render={({
+                                field: { onChange, value, ...field },
+                              }) => {
+                                console.log("Value:", value);
+                                return (
+                                  <Select
+                                    label={question.label}
+                                    value={value}
+                                    onChange={(selectedValue) => {
+                                      onChange(selectedValue);
+                                      setValue(question.name, selectedValue);
+                                    }}
+                                    {...field}
+                                  >
+                                    {question.options.map((option, i) => (
+                                      <Option key={i} value={option}>
+                                        {option}
+                                      </Option>
+                                    ))}
+                                  </Select>
+                                );
+                              }}
                             />
                           );
                         default:
@@ -243,6 +262,7 @@ export default function JoinTeam() {
                     <Button
                       type="submit"
                       className="mt-4 flex-none font-dm-sans"
+                      disabled={progress !== 100}
                     >
                       Apply
                     </Button>

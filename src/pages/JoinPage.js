@@ -3,7 +3,8 @@ import JoinTeam from "../components/Applications";
 import Hero from "../components/Hero";
 function JoinPage() {
   return (
-    <>
+    <>  
+      <Hero />
       <JoinTeam />
     </>
   );

@@ -19,7 +19,7 @@ function Footer() {
         </div>
         <div className="flex font-dm-sans  gap-10 text-blue-gray-900">
           <ul>
-            <h3 class="block  font-semibold text-lg leading-relaxed tracking-normal ">
+            <h3 className="block  font-semibold text-lg leading-relaxed tracking-normal ">
               Cal Commit Websites
             </h3>
             <li className="mb-2">
@@ -51,7 +51,7 @@ function Footer() {
             </li>
           </ul>
           <ul>
-          <h3 class="block  font-semibold text-lg leading-relaxed tracking-normal ">
+          <h3 className="block  font-semibold text-lg leading-relaxed tracking-normal ">
               Our Socials
             </h3>
             <li className="mb-2">
