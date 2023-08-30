@@ -23,7 +23,7 @@ function CCNavbar() {
   const navItems = [
     { text: "Home", link: "/" },
     { text: "About", link: "/about" },
-    { text: "Volunteer With Us", link: "/volunteer" },
+    { text: "Volunteer With Us", link: "/join" },
     { text: "Donate", link: "/donate" },
   ];
 

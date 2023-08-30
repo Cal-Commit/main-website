@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import IndexPage from "./pages/IndexPage";
-
+import JoinPage from "./pages/JoinPage";
 function App() {
   return (
     <>
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/" element={<IndexPage /> } />
+        <Route path="/join" element={<JoinPage /> } />
       </Routes>
       <Footer />
     </>
