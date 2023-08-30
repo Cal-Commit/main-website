@@ -40,7 +40,7 @@ export default function JoinTeam() {
 
   const positions = [
     {
-      label: "Software Developer",
+      label: "Web Developer",
       questions: [
         { type: "Input", label: "Your Name", name: "devName" },
         { type: "Input", label: "Email Address", name: "devEmail" },
