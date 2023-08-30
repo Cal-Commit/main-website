@@ -14,9 +14,10 @@ import {
   TabsBody,
   TabPanel,
 } from "@material-tailwind/react";
-import { useForm, Controller, handleSubmit } from "react-hook-form";
+import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
-import axios from 'axios';
+import axios from "axios";
+import { useDebounce } from "use-debounce"; // you might need to install use-debounce package
 
 export default function JoinTeam() {
   const {
@@ -30,6 +31,9 @@ export default function JoinTeam() {
 
   const [currentTab, setCurrentTab] = useState("Developer");
   const [progress, setProgress] = useState(0);
+  const [lastSubmitted, setLastSubmitted] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [debouncedIsSubmitting] = useDebounce(isSubmitting, 5000);
 
   const positions = [
     {
@@ -110,50 +114,69 @@ export default function JoinTeam() {
     ).length;
     setProgress((filledFields / currentQuestions.length) * 100);
   }, [watchedFields, currentTab, positions]);
+  const [disableSubmit, setDisableSubmit] = useState(false);
 
   const submitHandler = async () => {
-    const currentPos = positions.find(pos => pos.label === currentTab);
-    const currentQuestions = currentPos?.questions.map(q => q.name) || [];
-    const nameToLabelMap = currentPos?.questions.reduce((map, q) => {
-      map[q.name] = q.label;
-      return map;
-    }, {}) || {};
-  
+    if (disableSubmit) {
+      console.log("Please wait before submitting again");
+      return;
+    }
+    setDisableSubmit(true);
+    const currentPos = positions.find((pos) => pos.label === currentTab);
+    const currentQuestions = currentPos?.questions.map((q) => q.name) || [];
+    const nameToLabelMap =
+      currentPos?.questions.reduce((map, q) => {
+        map[q.name] = q.label;
+        return map;
+      }, {}) || {};
+
     const filteredData = Object.keys(watchedFields)
-      .filter(key => currentQuestions.includes(key))
+      .filter((key) => currentQuestions.includes(key))
       .reduce((obj, key) => {
         obj[key] = watchedFields[key];
         return obj;
       }, {});
-  
+
     const data = {
       ...filteredData,
       position: currentTab,
     };
-  
+
     console.log("onSubmit");
     console.log(data);
-  
+
     const discordEmbed = {
       embeds: [
         {
           title: "New Application",
           description: `New ${currentTab} Application`,
           fields: Object.keys(filteredData).map((key) => {
-            return { name: nameToLabelMap[key] || key, value: filteredData[key].toString() };
+            return {
+              name: nameToLabelMap[key] || key,
+              value: filteredData[key].toString(),
+            };
           }),
         },
       ],
     };
-  
+
     try {
-      await axios.post('https://discord.com/api/webhooks/1146312198482837524/W9jElWb1Z8bDGNRth2yNHyBGCd0heDKCCs8X1HGe3cQEq0Fi7POIvMAhb8JAmhsFFlp_      ', discordEmbed);
-      console.log('Successfully sent to Discord');
+      await axios.post(
+        "https://discord.com/api/webhooks/1146312198482837524/W9jElWb1Z8bDGNRth2yNHyBGCd0heDKCCs8X1HGe3cQEq0Fi7POIvMAhb8JAmhsFFlp_      ",
+        discordEmbed
+      );
+      console.log("Successfully sent to Discord");
+      setTimeout(() => setDisableSubmit(false), 5000);
     } catch (error) {
-      console.error('Failed to send to Discord', error);
+      console.error("Failed to send to Discord", error);
     }
+    setLastSubmitted(new Date());
+    setIsSubmitting(false);
   };
-  
+  const allFieldsFilled = positions
+    .find((pos) => pos.label === currentTab)
+    ?.questions.every((q) => watchedFields[q.name]);
+
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 backdrop-filter backdrop-blur-md">
       <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60">
@@ -300,6 +323,7 @@ export default function JoinTeam() {
                     <Button
                       type="submit"
                       className="mt-4 flex-none font-dm-sans"
+                      disabled={disableSubmit || !allFieldsFilled}
                     >
                       Apply
                     </Button>
