@@ -322,7 +322,7 @@ export default function JoinTeam() {
                                   defaultValue={false}
                                   render={({ field }) => (
                                     <Checkbox
-                                      label={<Typography >question.label</Typography>}
+                                      label={<Typography >{question.label}</Typography>}
                                       {...field}
                                     />
                                   )}
