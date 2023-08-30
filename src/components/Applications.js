@@ -14,6 +14,7 @@ import {
   TabsBody,
   TabPanel,
   Alert,
+  TabsProps,
 } from "@material-tailwind/react";
 import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
@@ -250,6 +251,8 @@ export default function JoinTeam() {
                 value={currentTab}
                 orientation="vertical"
                 className="w-full h-full"
+                TabsProps={{defaultValue: 0}}
+
               >
                 <TabsHeader className="w-full flex-none flex flex-col text-lg">
                   {positions.map(({ label }) => (
@@ -286,7 +289,6 @@ export default function JoinTeam() {
                                   //rules={{ required: true }}
                                   render={({ field }) => (
                                     <Input
-                                      color="black"
                                       {...field}
                                       label={question.label}
                                       className="font-dm-sans"
@@ -320,7 +322,7 @@ export default function JoinTeam() {
                                   defaultValue={false}
                                   render={({ field }) => (
                                     <Checkbox
-                                      label={<Typography color="blue-gray">question.label</Typography>}
+                                      label={<Typography >question.label</Typography>}
                                       {...field}
                                     />
                                   )}
@@ -385,6 +387,7 @@ export default function JoinTeam() {
                 value={currentTab}
                 orientation="horizontal"
                 className="w-full h-full"
+                TabsProps={{defaultIndex: 0}}
               >
                 <TabsHeader className="w-full flex-none flex flex-row text-lg">
                   {positions.map(({ label }) => (
@@ -454,7 +457,7 @@ export default function JoinTeam() {
                                   defaultValue={false}
                                   render={({ field }) => (
                                     <Checkbox
-                                      label={<Typography color="blue-gray">{question.label}</Typography>}
+                                      label={<Typography >{question.label}</Typography>}
                                       {...field}
                                     />
                                   )}
