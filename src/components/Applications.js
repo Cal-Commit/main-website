@@ -14,7 +14,7 @@ import {
   TabsBody,
   TabPanel,
 } from "@material-tailwind/react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, handleSubmit } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
 
 export default function JoinTeam() {
@@ -104,22 +104,24 @@ export default function JoinTeam() {
     const currentQuestions =
       positions.find((pos) => pos.label === currentTab)?.questions || [];
 
-    console.log(watchedFields);
     const filledFields = currentQuestions.filter(
       (q) => watchedFields[q.name]
     ).length;
     setProgress((filledFields / currentQuestions.length) * 100);
-    console.log(filledFields);
   }, [watchedFields, currentTab, positions]);
 
-  const onSubmit = (data) => {
-    console.log("Application Data:", data);
+  const submitHandler = () => {
+    const data = {
+      ...watchedFields,
+      position: currentTab,
+    };
+    console.log("onSubmit");
+    console.log(data);
   };
-  
 
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 backdrop-filter backdrop-blur-md">
-      <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16">
+      <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60">
         <Card
           color="transparent"
           shadow={false}
@@ -160,8 +162,10 @@ export default function JoinTeam() {
             <TabsBody className="w-full flex-auto">
               {positions.map(({ label, questions }) => (
                 <TabPanel key={label} value={label} className="w-full h-full">
-                  <form onSubmit={handleSubmit(onSubmit)} className="h-full flex flex-col space-y-4">
-
+                  <form
+                    onSubmit={handleSubmit(submitHandler)}
+                    className="h-full flex flex-col space-y-4"
+                  >
                     {questions.map((question, index) => {
                       switch (question.type) {
                         case "Input":
@@ -171,7 +175,7 @@ export default function JoinTeam() {
                               name={question.name}
                               control={control}
                               defaultValue=""
-                              rules={{ required: true }}
+                              //rules={{ required: true }}
                               render={({ field }) => (
                                 <Input
                                   {...field}
@@ -188,7 +192,7 @@ export default function JoinTeam() {
                               name={question.name}
                               control={control}
                               defaultValue=""
-                              rules={{ required: true }}
+                              //rules={{ required: true }}
                               render={({ field }) => (
                                 <Textarea
                                   {...field}
@@ -229,7 +233,6 @@ export default function JoinTeam() {
                               render={({
                                 field: { onChange, value, ...field },
                               }) => {
-                                console.log("Value:", value);
                                 return (
                                   <Select
                                     label={question.label}
@@ -262,7 +265,6 @@ export default function JoinTeam() {
                     <Button
                       type="submit"
                       className="mt-4 flex-none font-dm-sans"
-                      disabled={progress !== 100}
                     >
                       Apply
                     </Button>
