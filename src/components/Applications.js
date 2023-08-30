@@ -16,6 +16,7 @@ import {
 } from "@material-tailwind/react";
 import { useForm, Controller, handleSubmit } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
+import axios from 'axios';
 
 export default function JoinTeam() {
   const {
@@ -110,8 +111,13 @@ export default function JoinTeam() {
     setProgress((filledFields / currentQuestions.length) * 100);
   }, [watchedFields, currentTab, positions]);
 
-  const submitHandler = () => {
-    const currentQuestions = positions.find(pos => pos.label === currentTab)?.questions.map(q => q.name) || [];
+  const submitHandler = async () => {
+    const currentPos = positions.find(pos => pos.label === currentTab);
+    const currentQuestions = currentPos?.questions.map(q => q.name) || [];
+    const nameToLabelMap = currentPos?.questions.reduce((map, q) => {
+      map[q.name] = q.label;
+      return map;
+    }, {}) || {};
   
     const filteredData = Object.keys(watchedFields)
       .filter(key => currentQuestions.includes(key))
@@ -127,6 +133,25 @@ export default function JoinTeam() {
   
     console.log("onSubmit");
     console.log(data);
+  
+    const discordEmbed = {
+      embeds: [
+        {
+          title: "New Application",
+          description: `New ${currentTab} Application`,
+          fields: Object.keys(filteredData).map((key) => {
+            return { name: nameToLabelMap[key] || key, value: filteredData[key].toString() };
+          }),
+        },
+      ],
+    };
+  
+    try {
+      await axios.post('https://discord.com/api/webhooks/1146312198482837524/W9jElWb1Z8bDGNRth2yNHyBGCd0heDKCCs8X1HGe3cQEq0Fi7POIvMAhb8JAmhsFFlp_      ', discordEmbed);
+      console.log('Successfully sent to Discord');
+    } catch (error) {
+      console.error('Failed to send to Discord', error);
+    }
   };
   
   return (
