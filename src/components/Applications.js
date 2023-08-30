@@ -103,7 +103,12 @@ export default function JoinTeam() {
   ];
 
   const watchedFields = watch();
-
+  const clearForm = () => {
+    const currentQuestions = positions.find(pos => pos.label === currentTab)?.questions || [];
+    currentQuestions.forEach((question) => {
+      setValue(question.name, question.type === 'Checkbox' ? false : '');
+    });
+  };
   const totalQuestions =
     positions.find((pos) => pos.label === currentTab)?.questions.length || 0;
 
@@ -209,6 +214,13 @@ export default function JoinTeam() {
           </ul>
         </Card>
         <div className="flex flex-col w-full md:w-3/4 h-full backdrop-blur-md p-4 rounded-xl">
+        <Button 
+        variant="text"
+          onClick={clearForm}
+          className="text-sm text-gray-500 self-end mb-2"
+        >
+          Clear
+        </Button>
           <Tabs
             value={currentTab}
             orientation="vertical"
