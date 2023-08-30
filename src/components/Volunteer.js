@@ -38,16 +38,16 @@ function VolunteerWithUs() {
                 >
                     <h2 className="text-gray-900 text-3xl font-bold font-dela-gothic mb-4">Volunteer With Us</h2>
                     <p className="text-blue-gray-900 text-xl font-semibold mb-8 max-w-lg">
-                        As a non-profit organization, we award volunteer hours to those who contribute to open source projects. We also retain the ability to distribute the President's Volunteer Service Award. Which is a highly recognized award that is given to those who volunteer a certain amount of hours. This looks great on college applications and resumes.
+                        As a non-profit organization, we award volunteer hours to those who contribute to open-source projects. We also distribute the President's Volunteer Service Award, a highly recognized award for volunteers.
                     </p>
+                    <a href='/join'>
                     <Button 
                         size="lg"
                         ripple="light"
                         className="transition-all duration-300 ease-in-out shadow-md bg-calcommit-orange text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:-rotate-6 hover:bg-white hover:border-calcommit-orange hover:text-black"
-                        href="/volunteer"
                     >
                         Join Now
-                    </Button>
+                    </Button></a>
                 </motion.div>
 
                 <motion.div 
@@ -55,6 +55,7 @@ function VolunteerWithUs() {
                     initial="hidden"
                     animate={controlsImage}
                     variants={fadeInFromLeft}
+                    whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                 >
                     <img src="polarbear.png" alt="Volunteers Image" className="rounded-md shadow-lg w-full h-auto" />
                 </motion.div>

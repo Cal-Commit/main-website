@@ -54,6 +54,7 @@ function Mission() {
                     initial="hidden"
                     animate={controlsImage}
                     variants={fadeInFromRight}
+                    whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                 >
                     <img src="bears.png" alt="About Cal Commit" className="rounded-md shadow-lg w-full h-auto" />
                 </motion.div>
