@@ -260,8 +260,7 @@ export default function JoinTeam() {
     const discordEmbed = {
       embeds: [
         {
-          title: "New Application",
-          description: `New ${currentTab} Application`,
+          title: `New ${currentTab} Application`,
           fields: Object.keys(filteredData).map((key) => {
             return {
               name: nameToLabelMap[key] || key,
