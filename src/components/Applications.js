@@ -40,9 +40,6 @@ export default function JoinTeam() {
 
   const positions = [
     {
-<<<<<<< HEAD
-      label: "Web Developer",
-=======
       label: "Start a Branch",
       questions: [
         { type: "Input", label: "Full Name", name: "branchName" },
@@ -69,7 +66,6 @@ export default function JoinTeam() {
     },
     {
       label: "Software Developer",
->>>>>>> 7f81fa8 (Co-authored-by: Rohan Ramakrishnan <14r14@users.noreply.github.com>)
       questions: [
         { type: "Input", label: "Full Name", name: "devName" },
         { type: "Input", label: "Email Address", name: "devEmail" },
