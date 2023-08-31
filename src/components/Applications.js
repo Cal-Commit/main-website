@@ -19,7 +19,7 @@ import {
 import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
 import axios from "axios";
-import { useDebounce } from "use-debounce"; 
+import { useDebounce } from "use-debounce";
 
 export default function JoinTeam() {
   const {
@@ -362,7 +362,7 @@ export default function JoinTeam() {
                   </Button>
                   <TabsBody
                     animate={{
-                      initial: {x: 250 },
+                      initial: { x: 250 },
                       mount: { x: 0 },
                       unmount: { x: 250 },
                     }}
