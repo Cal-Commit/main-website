@@ -13,7 +13,7 @@ function AboutLandingComp() {
             </div>
             
             <div className="transform hover:scale-105 transition-transform duration-300 md:w-3/5">
-                <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p090xhqs.jpg" alt="Mission Behind Cal Commit" className="rounded-md shadow-lg w-full h-auto" />
+                <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p090xhqs.jpg" alt="Mission Behind Cal Commit" className="rounded-md shadow-lg w-full h-auto ml-5" />
             </div>
             
         </div>

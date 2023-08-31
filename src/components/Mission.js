@@ -40,13 +40,14 @@ function Mission() {
                     <p className="text-blue-gray-900 text-xl font-semibold mb-8 max-w-lg">
                         Our mission is to equip computer science students with the skills and tools for successful collaboration and software development through participation in open-source projects, training in version control software, and competitions.
                     </p>
+                    <a href="/about">
                     <Button 
                         size="lg"
                         ripple="light"
                         className="transition-all duration-300 ease-in-out shadow-md bg-calcommit-orange text-white font-dm-sans text-lg border-2 border-transparent capitalize hover:scale-105 hover:-rotate-6 hover:bg-white hover:border-calcommit-orange hover:text-black"
                     >
                         Learn More
-                    </Button>
+                    </Button></a>
                 </motion.div>
 
                 <motion.div 

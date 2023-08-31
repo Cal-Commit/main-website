@@ -40,11 +40,40 @@ export default function JoinTeam() {
 
   const positions = [
     {
+<<<<<<< HEAD
       label: "Web Developer",
+=======
+      label: "Start a Branch",
       questions: [
-        { type: "Input", label: "Your Name", name: "devName" },
+        { type: "Input", label: "Full Name", name: "branchName" },
+        { type: "Input", label: "Email Address", name: "branchEmail" },
+        { type: "Input", label: "Discord username", name: "branchDiscord" },
+        { type: "Input", label: "School", name: "branchSchool" },
+        { type: "Input", label: "City", name: "branchCity" },
+        {
+          type: "Textarea",
+          label: "Why do you want to start a branch?",
+          name: "branchWhyStart",
+        },
+        {
+          type: "Textarea",
+          label: "What is your vision for the new branch?",
+          name: "branchVision",
+        },
+        {
+          type: "Checkbox",
+          label: "Are you willing to dedicate at least 5 hours a week?",
+          name: "branchTimeCommitment",
+        },
+      ],
+    },
+    {
+      label: "Software Developer",
+>>>>>>> 7f81fa8 (Co-authored-by: Rohan Ramakrishnan <14r14@users.noreply.github.com>)
+      questions: [
+        { type: "Input", label: "Full Name", name: "devName" },
         { type: "Input", label: "Email Address", name: "devEmail" },
-        { type: "Input", label: "Discord", name: "devDiscord" },
+        { type: "Input", label: "Discord username", name: "devDiscord" },
         {
           type: "Textarea",
           label: "Why do you want to volunteer as a Developer at Cal Commit?",
@@ -80,9 +109,9 @@ export default function JoinTeam() {
     {
       label: "Marketing Intern",
       questions: [
-        { type: "Input", label: "Your Name", name: "mktgName" },
+        { type: "Input", label: "Full Name", name: "mktgName" },
         { type: "Input", label: "Email Address", name: "mktgEmail" },
-        { type: "Input", label: "Discord", name: "mktgDiscord" },
+        { type: "Input", label: "Discord username", name: "mktgDiscord" },
 
         {
           type: "Textarea",
@@ -110,6 +139,72 @@ export default function JoinTeam() {
           type: "Checkbox",
           label: "Willing to attend virtual meetings weekly",
           name: "mktgVirtualMeetings",
+        },
+      ],
+    },
+    {
+      label: "Graphic Designer",
+      questions: [
+        { type: "Input", label: "Full Name", name: "gdName" },
+        { type: "Input", label: "Email Address", name: "gdEmail" },
+        {
+          type: "Textarea",
+          label: "Why do you want to volunteer as a Graphic Designer?",
+          name: "gdWhyVolunteer",
+        },
+        {
+          type: "Textarea",
+          label: "Describe your experience in Graphic Design.",
+          name: "gdExp",
+        },
+        {
+          type: "Select",
+          label: "Experience Level",
+          name: "gdLevel",
+          options: ["Beginner", "Intermediate", "Advanced", "Expert"],
+        },
+        {
+          type: "Checkbox",
+          label: "Familiar with Canva",
+          name: "gdAdobe",
+        },
+        {
+          type: "Checkbox",
+          label: "Willing to attend virtual meetings weekly",
+          name: "gdVirtualMeetings",
+        },
+      ],
+    },
+    {
+      label: "Web Designer",
+      questions: [
+        { type: "Input", label: "Full Name", name: "gdName" },
+        { type: "Input", label: "Email Address", name: "gdEmail" },
+        {
+          type: "Textarea",
+          label: "Why do you want to volunteer as a Web Designer?",
+          name: "wdWhyVolunteer",
+        },
+        {
+          type: "Textarea",
+          label: "Describe your experience in Website Designs.",
+          name: "wdExp",
+        },
+        {
+          type: "Select",
+          label: "Experience Level",
+          name: "wdLevel",
+          options: ["Beginner", "Intermediate", "Advanced", "Expert"],
+        },
+        {
+          type: "Checkbox",
+          label: "Familiar with Figma",
+          name: "wdFigma",
+        },
+        {
+          type: "Checkbox",
+          label: "Willing to attend virtual meetings weekly",
+          name: "wdVirtualMeetings",
         },
       ],
     },
@@ -200,7 +295,7 @@ export default function JoinTeam() {
     ?.questions.every((q) => watchedFields[q.name]);
 
   return (
-    <div className="w-screen min-h-screen flex flex-col bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md">
+    <div className="w-screen min-h-screen flex flex-col backdrop-filter backdrop-blur-md">
       <div className="flex-1 flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md">
         {alertVisible && (
           <Alert
@@ -224,7 +319,6 @@ export default function JoinTeam() {
             </Typography>
             <ul className="list-inside font-dm-sans">
               <li>Presidential Volunteer Service Award</li>
-              <li>Free training and workshops</li>
               <li>Letters of recommendation</li>
               <li>Get volunteer hours</li>
               <li>Experience for your resume</li>
@@ -236,24 +330,20 @@ export default function JoinTeam() {
                 variant="h4"
                 className="text-gray-900 text-3xl font-bold font-dela-gothic"
               >
-                Open Positions
+                Applications
               </Typography>
             </div>
-            <Button
-              variant="text"
-              onClick={clearForm}
-              className="text-sm text-gray-500 self-end mb-2"
-            >
-              Clear
-            </Button>
+
             <div className="hidden lg:flex">
               <Tabs
                 value={currentTab}
                 orientation="vertical"
                 className="w-full h-full"
-                TabsProps={{defaultValue: 0}}
-
+                TabsProps={{ defaultValue: 0 }}
+                id="custom-animation"
               >
+                {" "}
+                {/* Desktop */}
                 <TabsHeader className="w-full flex-none flex flex-col text-lg">
                   {positions.map(({ label }) => (
                     <Tab
@@ -266,136 +356,173 @@ export default function JoinTeam() {
                     </Tab>
                   ))}
                 </TabsHeader>
-                <TabsBody className="w-full flex-auto">
-                  {positions.map(({ label, questions }) => (
-                    <TabPanel
-                      key={label}
-                      value={label}
-                      className="w-full h-full"
-                    >
-                      <form
-                        onSubmit={handleSubmit(submitHandler)}
-                        className="h-full flex flex-col space-y-4"
+                <div className="w-full flex-auto">
+                  <Button
+                    variant="text"
+                    onClick={clearForm}
+                    className="text-sm text-gray-500 self-end"
+                  >
+                    Clear Form
+                  </Button>
+                  <TabsBody
+                    animate={{
+                      initial: {x: 250 },
+                      mount: { x: 0 },
+                      unmount: { x: 250 },
+                    }}
+                    className="w-full flex-auto"
+                  >
+                    {positions.map(({ label, questions }) => (
+                      <TabPanel
+                        key={label}
+                        value={label}
+                        className="w-full h-full"
                       >
-                        {questions.map((question, index) => {
-                          switch (question.type) {
-                            case "Input":
-                              return (
-                                <Controller
-                                  key={index}
-                                  name={question.name}
-                                  control={control}
-                                  defaultValue=""
-                                  //rules={{ required: true }}
-                                  render={({ field }) => (
-                                    <Input
-                                      {...field}
-                                      label={question.label}
-                                      className="font-dm-sans"
-                                    />
-                                  )}
-                                />
-                              );
-                            case "Textarea":
-                              return (
-                                <Controller
-                                  key={index}
-                                  name={question.name}
-                                  control={control}
-                                  defaultValue=""
-                                  //rules={{ required: true }}
-                                  render={({ field }) => (
-                                    <Textarea
-                                      {...field}
-                                      label={question.label}
-                                      className="font-dm-sans"
-                                    />
-                                  )}
-                                />
-                              );
-                            case "Checkbox":
-                              return (
-                                <Controller
-                                  key={index}
-                                  name={question.name}
-                                  control={control}
-                                  defaultValue={false}
-                                  render={({ field }) => (
-                                    <Checkbox
-                                      label={<Typography >{question.label}</Typography>}
-                                      {...field}
-                                    />
-                                  )}
-                                />
-                              );
-                            case "Select":
-                              return (
-                                <Controller
-                                  key={index}
-                                  name={question.name}
-                                  control={control}
-                                  render={({
-                                    field: { onChange, value, ...field },
-                                  }) => {
-                                    return (
-                                      <Select
-                                        label={question.label}
-                                        value={value}
-                                        onChange={(selectedValue) => {
-                                          onChange(selectedValue);
-                                          setValue(
-                                            question.name,
-                                            selectedValue
-                                          );
-                                        }}
-                                        {...field}
-                                      >
-                                        {question.options.map((option, i) => (
-                                          <Option key={i} value={option}>
-                                            {option}
-                                          </Option>
-                                        ))}
-                                      </Select>
-                                    );
-                                  }}
-                                />
-                              );
-                            default:
-                              return null;
-                          }
-                        })}
-                        <SmoothProgressBar
-                          value={progress}
-                          className="mt-4 flex-none"
-                        />
-
-                        <Button
-                          type="submit"
-                          className="mt-4 flex-none font-dm-sans"
-                          disabled={disableSubmit || !allFieldsFilled}
+                        <form
+                          onSubmit={handleSubmit(submitHandler)}
+                          className="shadow-lg h-full flex flex-col space-y-4 bg-white p-4 rounded-lg"
                         >
-                          Apply
-                        </Button>
-                      </form>
-                    </TabPanel>
-                  ))}
-                </TabsBody>
+                          {questions.map((question, index) => {
+                            switch (question.type) {
+                              case "Input":
+                                return (
+                                  <Controller
+                                    key={index}
+                                    name={question.name}
+                                    control={control}
+                                    defaultValue=""
+                                    //rules={{ required: true }}
+                                    render={({ field }) => (
+                                      <Input
+                                        {...field}
+                                        label={question.label}
+                                        labelProps={{
+                                          className: "font-dm-sans",
+                                        }}
+                                        className="font-dm-sans border border-black outline-black shadow-lg shadow-gray-900/5"
+                                      />
+                                    )}
+                                  />
+                                );
+                              case "Textarea":
+                                return (
+                                  <Controller
+                                    key={index}
+                                    name={question.name}
+                                    control={control}
+                                    defaultValue=""
+                                    //rules={{ required: true }}
+                                    render={({ field }) => (
+                                      <Textarea
+                                        {...field}
+                                        label={question.label}
+                                        labelProps={{
+                                          className: "font-dm-sans",
+                                        }}
+                                        className="font-dm-sans shadow-sm shadow-lg shadow-gray-900/5"
+                                      />
+                                    )}
+                                  />
+                                );
+                              case "Checkbox":
+                                return (
+                                  <Controller
+                                    key={index}
+                                    name={question.name}
+                                    control={control}
+                                    defaultValue={false}
+                                    render={({ field }) => (
+                                      <Checkbox
+                                        label={
+                                          <Typography className="font-dm-sans font-normal">
+                                            {question.label}
+                                          </Typography>
+                                        }
+                                        {...field}
+                                        className="font-dm-sans shadow-lg shadow-gray-900/5"
+                                      />
+                                    )}
+                                  />
+                                );
+                              case "Select":
+                                return (
+                                  <Controller
+                                    key={index}
+                                    name={question.name}
+                                    control={control}
+                                    render={({
+                                      field: { onChange, value, ...field },
+                                    }) => {
+                                      return (
+                                        <Select
+                                          label={question.label}
+                                          labelProps={{
+                                            className: "font-dm-sans",
+                                          }}
+                                          value={value}
+                                          onChange={(selectedValue) => {
+                                            onChange(selectedValue);
+                                            setValue(
+                                              question.name,
+                                              selectedValue
+                                            );
+                                          }}
+                                          {...field}
+                                          className="font-dm-sans shadow-lg shadow-gray-900/5"
+                                        >
+                                          {question.options.map((option, i) => (
+                                            <Option
+                                              key={i}
+                                              value={option}
+                                              className="font-dm-sans"
+                                            >
+                                              {option}
+                                            </Option>
+                                          ))}
+                                        </Select>
+                                      );
+                                    }}
+                                  />
+                                );
+                              default:
+                                return null;
+                            }
+                          })}
+                          <SmoothProgressBar
+                            value={progress}
+                            className="mt-4 flex-none"
+                          />
+
+                          <Button
+                            type="submit"
+                            className="mt-4 flex-none font-dm-sans capitalize text-lg py-2 disabled:bg-gray-500 disabled:cursor-not-allowed disabled:text-black"
+                            disabled={disableSubmit || !allFieldsFilled}
+                          >
+                            Apply
+                          </Button>
+                        </form>
+                      </TabPanel>
+                    ))}
+                  </TabsBody>
+                </div>
               </Tabs>
             </div>
             <div className="lg:hidden">
+              {" "}
+              {/* Mobile */}
               <Tabs
                 value={currentTab}
                 orientation="horizontal"
                 className="w-full h-full"
-                TabsProps={{defaultIndex: 0}}
+                TabsProps={{ defaultIndex: 0 }}
               >
-                <TabsHeader className="w-full flex-none flex flex-row text-lg">
+                <TabsHeader className="w-full flex-none flex flex-row text-md overflow-x-auto ">
                   {positions.map(({ label }) => (
                     <Tab
                       key={label}
                       value={label}
                       onClick={() => setCurrentTab(label)}
-                      className="w-1/2 text-center font-dm-sans py-2"
+                      className="w-1/2 text-center font-dm-sans py-1 text-md"
                     >
                       {label}
                     </Tab>
@@ -407,11 +534,19 @@ export default function JoinTeam() {
                       key={label}
                       value={label}
                       className="w-full h-full"
+                      orientation="horizontal"
                     >
                       <form
                         onSubmit={handleSubmit(submitHandler)}
                         className="h-full flex flex-col space-y-4"
                       >
+                        <Button
+                          variant="text"
+                          onClick={clearForm}
+                          className="text-sm text-gray-500 self-end"
+                        >
+                          Clear Form
+                        </Button>
                         {questions.map((question, index) => {
                           switch (question.type) {
                             case "Input":
@@ -424,9 +559,10 @@ export default function JoinTeam() {
                                   //rules={{ required: true }}
                                   render={({ field }) => (
                                     <Input
+                                      variant="standard"
                                       {...field}
                                       label={question.label}
-                                      className="font-dm-sans"
+                                      className=" font-dm-sans"
                                     />
                                   )}
                                 />
@@ -457,7 +593,11 @@ export default function JoinTeam() {
                                   defaultValue={false}
                                   render={({ field }) => (
                                     <Checkbox
-                                      label={<Typography >{question.label}</Typography>}
+                                      label={
+                                        <Typography className="font-dm-sans font-semibold">
+                                          {question.label}
+                                        </Typography>
+                                      }
                                       {...field}
                                     />
                                   )}
