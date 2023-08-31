@@ -19,7 +19,7 @@ import {
 import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
 import axios from "axios";
-import { useDebounce } from "use-debounce"; // you might need to install use-debounce package
+import { useDebounce } from "use-debounce"; 
 
 export default function JoinTeam() {
   const {
