@@ -533,8 +533,8 @@ export default function JoinTeam() {
                     >
                       <form
                         onSubmit={handleSubmit(submitHandler)}
-                        className="h-full flex flex-col space-y-4"
-                      >
+                        className="shadow-lg h-full flex flex-col space-y-4 bg-white p-4 rounded-lg"
+                        >
                         <Button
                           variant="text"
                           onClick={clearForm}
@@ -554,11 +554,11 @@ export default function JoinTeam() {
                                   //rules={{ required: true }}
                                   render={({ field }) => (
                                     <Input
-                                      variant="standard"
+                                      variant="outline"
                                       {...field}
                                       label={question.label}
-                                      className=" font-dm-sans"
-                                    />
+                                      className="font-dm-sans border border-black outline-black shadow-lg shadow-gray-900/5"
+                                      />
                                   )}
                                 />
                               );
@@ -574,7 +574,7 @@ export default function JoinTeam() {
                                     <Textarea
                                       {...field}
                                       label={question.label}
-                                      className="font-dm-sans"
+                                      className="font-dm-sans border border-black outline-black shadow-lg shadow-gray-900/5"
                                     />
                                   )}
                                 />
