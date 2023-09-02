@@ -26,7 +26,7 @@ function VolunteerWithUs() {
     }, [controlsText, controlsImage, inView]);
 
     return (
-        <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-10 px-4 md:px-8 lg:px-8 xl:px-16 backdrop-filter: blur(5px) bg-white bg-opacity-70">
+        <div className="overflow-hidden bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-10 px-4 md:px-8 lg:px-8 xl:px-16 backdrop-filter: blur(5px) bg-white bg-opacity-70">
             <div className="max-w-full w-11/12 lg:w-4/5 mx-auto flex flex-col md:flex-row-reverse justify-between items-center">
 
                 <motion.div 

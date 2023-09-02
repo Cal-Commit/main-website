@@ -14,6 +14,7 @@ const teamMembers = [
     image: "https://splitxorpio.github.io/portfolio/picture.png",
     position: "President",
     portfolio: "https://arnavpandey.xyz",
+    instagram: "https://instagram.com/arnavpandey722",
   },
   {
     name: "Rohan Ramakrishnan",
@@ -47,12 +48,14 @@ const teamMembers = [
     image:
       "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png",
     position: "Treasurer",
+    instagram: "https://www.instagram.com/caiitelyn/",
   },
 
   {
     name: "Tiffany Zhang",
     image: "https://roborally.calcommit.org/tiff.jpg",
     position: "Marketing Manager",
+    instagram: "instagram.com/tiffzhny",
   },
 
   {
@@ -60,13 +63,16 @@ const teamMembers = [
     image:
       "https://cdn.discordapp.com/attachments/1065021922447999036/1079588343773413486/vivaan-vora.04d0429.png",
     position: "Activities Coordinator",
+    instagram: "https://www.instagram.com/vivaan_vora/",
   },
 ];
 
 export default function OurTeam() {
   return (
     <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-10 sm:py-16 lg:py-20 px-4 md:px-8 lg:px-12 xl:px-24 backdrop-filter backdrop-blur-lg bg-white bg-opacity-70">
-      <h2 className="justify-center flex text-gray-900 text-2xl sm:text-3xl font-bold font-dela-gothic mb-4">Our Team</h2>
+      <h2 className="justify-center flex text-gray-900 text-2xl sm:text-3xl font-bold font-dela-gothic mb-4">
+        Our Team
+      </h2>
 
       <div className="max-w-full w-full mx-auto flex flex-wrap justify-center gap-4">
         {teamMembers.map((member, index) => (
@@ -88,10 +94,18 @@ function ProfileCard({ member }) {
         />
       </CardHeader>
       <CardBody className="text-center p-4">
-        <Typography variant="h4" color="blue-gray" className="font-dm-sans mb-2">
+        <Typography
+          variant="h4"
+          color="blue-gray"
+          className="font-dm-sans mb-2"
+        >
           {member.name}
         </Typography>
-        <Typography color="blue-gray" className="font-dm-sans font-medium" textGradient>
+        <Typography
+          color="blue-gray"
+          className="font-dm-sans font-medium"
+          textGradient
+        >
           {member.position}
         </Typography>
       </CardBody>
@@ -113,6 +127,7 @@ function ProfileCard({ member }) {
         {member.twitter && (
           <Tooltip content="Twitter">
             <Typography
+              target="_blank"
               as="a"
               href={member.twitter}
               variant="lead"
@@ -126,6 +141,7 @@ function ProfileCard({ member }) {
         {member.instagram && (
           <Tooltip content="Instagram">
             <Typography
+              target="_blank"
               as="a"
               href={member.instagram}
               variant="lead"
