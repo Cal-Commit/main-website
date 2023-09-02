@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 import logo from "../static/img/Cal Commit Logo.svg";
 
-function CCFooter() {
+function Footer() {
   return (
     <footer className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 border border-white py-4 px-8 rounded-md shadow-lg backdrop-filter: blur(5px) bg-white bg-opacity-70">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
@@ -19,7 +19,7 @@ function CCFooter() {
         </div>
         <div className="flex font-dm-sans  gap-10 text-blue-gray-900">
           <ul>
-            <h3 class="block  font-semibold text-lg leading-relaxed tracking-normal ">
+            <h3 className="block  font-semibold text-lg leading-relaxed tracking-normal ">
               Cal Commit Websites
             </h3>
             <li className="mb-2">
@@ -51,7 +51,7 @@ function CCFooter() {
             </li>
           </ul>
           <ul>
-          <h3 class="block  font-semibold text-lg leading-relaxed tracking-normal ">
+          <h3 className="block  font-semibold text-lg leading-relaxed tracking-normal ">
               Our Socials
             </h3>
             <li className="mb-2">
@@ -76,4 +76,4 @@ function CCFooter() {
   );
 }
 
-export default CCFooter;
+export default Footer;

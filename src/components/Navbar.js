@@ -23,7 +23,7 @@ function CCNavbar() {
   const navItems = [
     { text: "Home", link: "/" },
     { text: "About", link: "/about" },
-    { text: "Volunteer With Us", link: "/volunteer" },
+    { text: "Volunteer With Us", link: "/join" },
     { text: "Donate", link: "/donate" },
   ];
 
@@ -48,14 +48,12 @@ function CCNavbar() {
 
   return (
     <Navbar className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 font-dm-sans max-w-full w-11/12 lg:w-4/5 rounded-md py-2 px-4 lg:px-8 lg:py-4 shadow-lg backdrop-filter: blur(2px) bg-opacity-50">
-      <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
+      <div className="flex items-center justify-between text-blue-gray-900">    <Typography
           as="a"
-          href="#"
+          href="/"
           className="flex items-center transition-all duration-300 bg-gray-100 ease-in-out mr-4 cursor-pointer py-1.5 font-black font-dela-gothic text-gray-900 text-3xl backdrop-blur-md rounded-lg shadow-sm p-2 md:hover:scale-105 md:hover:shadow-lg md:hover:-rotate-12"
         >
-          <img src={logo} alt="Cal Commit" className="h-10 w-auto mr-2" /> Cal
-          Commit
+<img src={logo} alt="Cal Commit" className="h-10 w-auto mr-2" /> Cal          Commit
         </Typography>
         <div className="flex items-center gap-4">
           <div className="mr-4 hidden lg:block">{navList}</div>
