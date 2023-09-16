@@ -21,14 +21,14 @@ function Hero() {
                 <motion.img 
                     src={logo} 
                     alt="Cal Commit" 
-                    className="bg-gray-100 h-32 w-auto mx-auto mb-8 rounded-full shadow-lg"
+                    className="bg-gray-100 h-64 w-auto mx-auto  mt-4 rounded-full shadow-lg" 
                     variants={fadeIn}
                     initial="hidden"
                     animate="visible"
                 />
 
                 <motion.h1 
-                    className="text-gray-900 text-4xl font-bold font-dela-gothic mb-4"
+                    className="text-gray-900 text-8xl font-bold font-dela-gothic mb-12"
                     variants={slideUp}
                     initial="hidden"
                     animate="visible"
@@ -38,7 +38,7 @@ function Hero() {
                 </motion.h1>
                 
                 <motion.p 
-                    className="text-blue-gray-900 text-xl font-semibold mb-8"
+                    className="text-blue-gray-900 text-3xl font-semibold mb-12" 
                     variants={slideUp}
                     initial="hidden"
                     animate="visible"

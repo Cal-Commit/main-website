@@ -15,6 +15,7 @@ import {
   TabPanel,
   Alert,
   TabsProps,
+  Divider,
 } from "@material-tailwind/react";
 import { useForm, Controller, handleSubmit, set } from "react-hook-form";
 import SmoothProgressBar from "./ProgressBar";
@@ -31,7 +32,7 @@ export default function JoinTeam() {
     formState: { isValid },
   } = useForm({ mode: "onChange" });
 
-  const [currentTab, setCurrentTab] = useState("Developer");
+  const [currentTab, setCurrentTab] = useState("Start a Branch");
   const [progress, setProgress] = useState(0);
   const [lastSubmitted, setLastSubmitted] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -210,10 +211,17 @@ export default function JoinTeam() {
   const clearForm = () => {
     const currentQuestions =
       positions.find((pos) => pos.label === currentTab)?.questions || [];
-    currentQuestions.forEach((question) => {
-      setValue(question.name, question.type === "Checkbox" ? false : "");
+
+    currentQuestions.forEach(({ name, type }) => {
+      const defaultValue = type === "Checkbox" ? false : "";
+      setValue(name, defaultValue);
+
+      if (type === "Checkbox") {
+        setValue(name, false);
+      }
     });
   };
+
   const totalQuestions =
     positions.find((pos) => pos.label === currentTab)?.questions.length || 0;
 
@@ -290,17 +298,17 @@ export default function JoinTeam() {
     ?.questions.every((q) => watchedFields[q.name]);
 
   return (
-    <div className="w-screen min-h-screen flex flex-col backdrop-filter backdrop-blur-md">
-      <div className="flex-1 flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md">
+    <div className="overflow-x-hidden w-screen min-h-screen flex flex-col backdrop-filter backdrop-blur-md overflow-hidden">
+      <div className="overflow-x-hidden flex-1 flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md">
         {alertVisible && (
           <Alert
-            className="absolute bottom-4 right-4 w-3/4 md:w-1/4 z-50"
+            className="absolute bottom-4 w-3/4 md:w-1/4 z-50"
             onClose={() => setAlertVisible(false)}
           >
             Successfully submitted! Thank you for applying.
           </Alert>
         )}
-        <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60">
+        <div className="flex flex-col md:flex-row w-full h-full gap-4 p-8 md:p-16 md:mt-16 mt-16 md:mb-16 mb-60 ">
           <Card
             color="transparent"
             shadow={false}
@@ -319,7 +327,7 @@ export default function JoinTeam() {
               <li>Experience for your resume</li>
             </ul>
           </Card>
-          <div className="flex flex-col w-full md:w-3/4 h-full backdrop-blur-md p-4 rounded-xl">
+          <div className="flex flex-col w-full md:w-5/8 h-full backdrop-blur-md p-4 rounded-xl overflow-hidden">
             <div className="mb-4">
               <Typography
                 variant="h4"
@@ -329,7 +337,7 @@ export default function JoinTeam() {
               </Typography>
             </div>
 
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex overflow-hidden">
               <Tabs
                 value={currentTab}
                 orientation="vertical"
@@ -357,13 +365,6 @@ export default function JoinTeam() {
                   ))}
                 </TabsHeader>
                 <div className="w-full flex-auto">
-                  <Button
-                    variant="text"
-                    onClick={clearForm}
-                    className="text-sm text-gray-500 self-end"
-                  >
-                    Clear Form
-                  </Button>
                   <TabsBody
                     animate={{
                       initial: { x: 250 },
@@ -382,6 +383,23 @@ export default function JoinTeam() {
                           onSubmit={handleSubmit(submitHandler)}
                           className="shadow-lg h-full flex flex-col space-y-4 bg-white p-4 rounded-lg"
                         >
+                          <div className="flex justify-between items-center">
+                            <Typography
+                              variant="h4"
+                              className="text-gray-900 text-3xl font-bold font-dela-gothic"
+                            >
+                              {`${label} Application Form`}
+                            </Typography>
+                            <Button
+                              variant="text"
+                              onClick={clearForm}
+                              className="text-sm text-gray-500 self-end"
+                            >
+                              Clear Form
+                            </Button>
+                          </div>
+                          <div className="border-t border-gray-300 my-1"></div>
+
                           {questions.map((question, index) => {
                             switch (question.type) {
                               case "Input":
@@ -538,7 +556,7 @@ export default function JoinTeam() {
                     >
                       <form
                         onSubmit={handleSubmit(submitHandler)}
-                        className="shadow-lg h-full flex flex-col space-y-4 bg-white p-4 rounded-lg"
+                        className="w-full shadow-lg h-full flex flex-col space-y-4 bg-white p-4 rounded-lg"
                       >
                         <Button
                           variant="text"
