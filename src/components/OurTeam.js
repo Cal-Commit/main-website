@@ -22,6 +22,7 @@ const teamMembers = [
     image:
       "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png",
     position: "President",
+    linkedin: "https://linkedin.com/in/rohan-ramakrishnan-7225a9290/",
     
   },
   {
