@@ -298,7 +298,7 @@ export default function JoinTeam() {
     ?.questions.every((q) => watchedFields[q.name]);
 
   return (
-    <div className="overflow-x-hidden w-screen min-h-screen flex flex-col backdrop-filter backdrop-blur-md overflow-hidden">
+    <div className="overflow-x-hidden  min-h-screen flex flex-col backdrop-filter backdrop-blur-md overflow-hidden">
       <div className="overflow-x-hidden flex-1 flex flex-col items-center justify-center bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md">
         {alertVisible && (
           <Alert
@@ -327,7 +327,7 @@ export default function JoinTeam() {
               <li>Experience for your resume</li>
             </ul>
           </Card>
-          <div className="flex flex-col w-full md:w-5/8 h-full backdrop-blur-md p-4 rounded-xl overflow-hidden">
+          <div className="flex flex-col  md:w-5/8 h-full backdrop-blur-md p-4 rounded-xl overflow-hidden">
             <div className="mb-4">
               <Typography
                 variant="h4"
@@ -337,7 +337,7 @@ export default function JoinTeam() {
               </Typography>
             </div>
 
-            <div className="hidden lg:flex overflow-hidden">
+            <div className="hidden lg:flex overflow-x-hidden">
               <Tabs
                 value={currentTab}
                 orientation="vertical"

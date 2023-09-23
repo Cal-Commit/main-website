@@ -3,7 +3,7 @@ import bearsimage from "../static/img/3bears.webp";
 
 const JoinLanding = () => {
   return (
-    <div className="w-screen h-screen bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md flex flex-col items-center justify-center overflow-hidden">
+    <div className=" h-screen bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100 backdrop-filter backdrop-blur-md flex flex-col items-center justify-center overflow-hidden">
       <div className="hover:scale-105 transition duration-300 ease-in-out">
         <img
           src={bearsimage}
