@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -15,12 +15,14 @@ const teamMembers = [
     position: "President",
     portfolio: "https://arnavpandey.xyz",
     instagram: "https://instagram.com/arnavpandey722",
+    linkedin: "https://linkedin.com/in/arnav-pandey-985280227",
   },
   {
     name: "Rohan Ramakrishnan",
     image:
       "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png",
     position: "President",
+    linkedin: "https://linkedin.com/in/rohan-ramakrishnan-7225a9290/",
   },
   {
     name: "Aditya Sahasranam",
@@ -30,18 +32,21 @@ const teamMembers = [
     portfolio: "https://adityasahas.tech",
     twitter: "https://twitter.com/adityasahas",
     instagram: "https://instagram.com/bababooeyacc",
+    linkedin: "https://linkedin.com/in/adityasahas",
   },
   {
     name: "Srinikesh Kanneluru",
     image:
       "https://static.wixstatic.com/media/8a7384_c52993baccf54e93910fdc7209a023db~mv2.jpeg/v1/crop/x_0,y_33,w_1213,h_1215/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/image0.jpeg",
     position: "Vice President",
+    linkedin: "https://linkedin.com/in/srinikeshkanneluru",
   },
   {
     name: "Swayam Shah",
     image:
       "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg",
     position: "Secretary",
+    linkedin: "https://linkedin.com/in/swayam-shah-699aa6235",
   },
   {
     name: "Caitelyn Huang ",
@@ -64,6 +69,7 @@ const teamMembers = [
       "https://cdn.discordapp.com/attachments/1065021922447999036/1079588343773413486/vivaan-vora.04d0429.png",
     position: "Activities Coordinator",
     instagram: "https://www.instagram.com/vivaan_vora/",
+    linkedin: "https://linkedin.com/in/vivaan-vora-720410284",
   },
 ];
 
@@ -84,13 +90,23 @@ export default function OurTeam() {
 }
 
 function ProfileCard({ member }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <Card className="font-dm-sans w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-2 my-4 flex flex-col justify-between">
-      <CardHeader floated={false} className="h-48 sm:h-64 md:h-80">
+    <Card
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="font-dm-sans w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-2 my-4 flex flex-col justify-between"
+    >
+      <CardHeader
+      
+        floated={isHovered}
+        className="h-48 sm:h-64 md:h-80 transition-all duration-700 ease-in-out"
+      >
         <img
           src={member.image}
-          alt="profile-picture"
-          className="object-cover h-full w-full rounded"
+          alt="profile"
+          className="object-cover h-full w-full rounded shadow-lg"
         />
       </CardHeader>
       <CardBody className="text-center p-4">
@@ -149,6 +165,20 @@ function ProfileCard({ member }) {
               textGradient
             >
               <i className="fab fa-instagram" />
+            </Typography>
+          </Tooltip>
+        )}
+        {member.linkedin && (
+          <Tooltip content="LinkedIn">
+            <Typography
+              target="_blank"
+              as="a"
+              href={member.linkedin}
+              variant="lead"
+              color="blue"
+              textGradient
+            >
+              <i className="fab fa-linkedin" />
             </Typography>
           </Tooltip>
         )}

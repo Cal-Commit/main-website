@@ -5,8 +5,9 @@ export default function OurEvents() {
   const events = [
     {
       name: "Oasis Hacks",
+      link: "https://oasis.calcommit.org",
       date: "August 6th, 2023",
-      info: "Oasis Hacks, hosted by Cal Commit, is an exciting hackathon event that brings together creative minds and tech enthusiasts to collaborate and build innovative solutions. This year, the hackathon took place on August 6th from 9am to 9pm PST at Circuit Launch in Oakland, California.      ",
+      info: "Set against the backdrop of Circuit Launch in Oakland, California, Oasis Hacks is a one-day hackathon extravaganza hosted by Cal Commit. Scheduled for August 6th, from 9 am to 9 pm PST, this event is a unique gathering of tech aficionados, problem solvers, and design thinkers who are all set to bring innovative solutions to life. Oasis Hacks stands out for its focus on real-world challenges and the pursuit of groundbreaking ideas. Whether you're a seasoned developer or a tech enthusiast, the event provides a fertile ground for skill development, network expansion, and innovative project creation. Participants will team up for a fast-paced 12-hour coding session under the mentorship of industry experts, working towards solutions based on a specific theme. Not just a competition, Oasis Hacks also emphasizes community building. With numerous opportunities for networking, you can connect with like-minded individuals, learn from industry veterans, and even catch the eye of potential investors and sponsors.",
       images: [
         "https://lh3.googleusercontent.com/pw/AIL4fc-BTSgk3vWb0HKcEBMSSxunY3tYTouyijiqcp6PC10y0HQzduNwq9IA5WI2XITkFML5Yoe8cxCf227OMPGWvLQYqwgsasomi2lV2Pn2Q9srT9H61dbsNXOr5mLJ6-qpLS64U1vjaLPiQoY-xHf3z_vr=w627-h836-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc_c5abyQUfHtKcYdwYuGJtFnyCIe2z96aGqY5gabmz-mMzfVsTQfUJ3-J7jBm-Uv-3Cx_LvIk-YUEhIBR1bga8Z3MsoTRzdlm0V21_6UmOVhNul9aP7HVpqj6xX_Fc_ofKwjjV6Ag2nZSF0mJkbqgyc=w627-h836-s-no?authuser=0",
@@ -17,13 +18,6 @@ export default function OurEvents() {
         "https://lh3.googleusercontent.com/pw/AIL4fc_BQ_BiA0MP_YZC6qFtvbjhYCnjrFm5n4rpwPmSXYi6N1_9A46mMTp-cFOGX1Xw3wqj23ea6kaXEKrPoh4UAvZkf7wH2kd4-mZpZVjLJmTlEOh7T-fWiDIn223Z4wPgix26Y5JSBvSpdVFJe9uRvZRj=w1366-h1820-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc8q6pOgGFInqjRO9J_owArYnrgHSVxlLWaCP98evW9IB6rJX5q8ZyM-oPFy9DuHoWdGW5cVjiIlqVGBtClIXe6nuP_wsB1eU_nL_ssejNYGTnNJ-RHLDjzj8H2QhdG1I6a_GJTqZ4dNGHVe5FH39l6q=w1460-h1946-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc9hoqk0_xmFDV-OpFIv79-jZ3hNtBdMzXNIiFs_ds-iUfSvbG962KDG-JtbRg8FQnmj68JNL_GX9-vl_FNqIMTLT2lPgC66KBVM0dYQaaF-68UD5MIerjAdZBY_rBaJE0Ahjl4sP9DAwssS23zA8V_y=w1460-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc9QNcNQ2WHpZ2Hnlyo1GrZEcZwEdPcGL10KbH8KUzMX5qfi48nkPHpZadVM1ndW-MzQPeVsH4X-S__KxuTIJbgvwwh80AnN-Cq-nEy5o8I8RDFSmdmhdJi9-Xb6-oAzqJ8BC8KL0KVQabyD-qJh4CjU=w2594-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc-IxUdSGZdEWX5jWrKGekXmzC9_B0WTqenT8dtftjkM_kAD0gdkZbEW0L_uzSurxK5ga9cSl8Cx5tPGIfK1dUCLnWAUPG_l4wvU_cAXEfbLF4QL3tk4f4GHABaS-SqTf_sUeyG6twJhcDEkxz7KlE4S=w2594-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc8pNJYBvwJvrKkXS6RXopKuTK48W2d7lLOJDA-pnGkDmGaC5N9RC-0p7_N13etI9m8xS-E8CNefLLrQJwBau7pRhrWPulBkSd92Yc78LJrkvokJPwlTvbWDjfFVpNm6pAMa_SvYYyabS5GJhKmED7mc=w1460-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc8a3SRw0jw065s6vNZCvxaUwMgxiOUDHg9_k9BesJWaZMSt8YiHz4ZsWHLB_7lr28rzCSttVk6v3DcYO-fFUe1huPYpxgK5oxzuZtSJQuIXfj3w_oVJKBKWsZ3POxOfFAQ8pO4LM6fInMVYa2zrYfaK=w1460-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc99DynFvVgc2DNZG9QX1ElkJtKUDCjz7gOe3PGQYkcFx39cqSroPyYslfq4qsz3IMp8XRyk3X1TfiiKQc36ckKhUjpwgH5AEBMPDA-M4a-I0uV_w1mFSBs6FyIWHUUyBt5E5fOkZbcTcdZkS7-kCUujzg=w2594-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc-2eSKNrZF7sOyY3tZb7TjgOj5nWcthNsfKonUPo-CTZid7C5gSb_eZWstOffXsQRwrDqTuSgzsTxrwGLD3cn0XGznMe1AdH93LXwWb8MsIjk4tmKdeTvzDaqX1tIT7VkuAQ0F_Pv_PUwPKtzoE4Wogag=w2594-h1946-s-no?authuser=0",
-        "https://lh3.googleusercontent.com/pw/AIL4fc_Zsmh04dDXkvSPZAip2oDu1PGClahs7iIytgfa56HfV_tzWrLeB_fCfG81CVw6DAosOyKj02_A_HdM4so8ADC2mifRMDLhqQjPbvIwxBEdpQmkMccqfd3sr0Jf1OVfFt_o1vTLZnI13ne6utl0feeROg=w2594-h1946-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc-yecHOKL7oEY55uwgWyZdgUzTq2r25nKp70AfpYD9Ab5zbRR1PZyBKs8N47n8eHCxHPutnIxwfC1_6wwLORPguVPfFQYytT7LVxk2aHnb1upO6s-w58pqge2DY1ExSuzfBYy4QfOybQRHdtfcEIJav=w2594-h1946-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc-a_BUbU5_f-uG3Ziy1NuxbFPHwHDqpcR7lFFEruhWRLbYyVFu-Pbn6DiD5KflGZQ6RSvpOHcwQe8rKdnIAZUC-9sM-YX19OEtRG8cp65iN_Hef6d_3QkXCe0216BK0GCEuXQ2xHobH-EgJBNny37uH4Q=w1460-h1946-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AIL4fc8ITQh3KTHilq1YiExXiMPMoexYCRCUve19fb-MoZAYtZfL5JIK5d0r2hdDEgXZ5LFCG1F-HrIQXu7iPLU6fUq36JQF3ksfZ3K1HenGjPlKBXpGNInFOnuO2tf33SyZuOkgHfQd4alCWCUB5ClI1JUZBw=w2594-h1946-s-no?authuser=0",
@@ -40,6 +34,20 @@ export default function OurEvents() {
         "https://lh3.googleusercontent.com/pw/AIL4fc_g-F5vBv6qKjwluRwf_sbQt5k48zo1UpAQxFpZY5Bqjru0csbAiMUr32NoyTns1UMwIWcO-clu8FWCviApZHL7n4fCe406tyq3ozUyeGTlbW43_hYNQEajhCjzYvdjWKwRB_VAQQ7h1p1qotyiQhLasQ=w2594-h1946-s-no?authuser=0",
       ],
     },
+    {
+      name: "Git Init 2023",
+      link: "https://gitinit.calcommit.org",
+      date: "January 6th - 8th, 2023",
+      info: "Hosted by Cal Commit, Git Init 2023 was an online hackathon that brought together high school students from around the globe for an intense three-day coding event from January 6th to 8th, 2023. With $192,800 in prizes and a robust participation of 278 students, the hackathon aimed to provide a comprehensive understanding of computer science, focusing on fostering collaboration and teamwork skills. Open to students aged 13 to 18, this beginner-friendly hackathon was more than just a competition; it was a mission to equip the younger generation with essential computer science knowledge. Through various educational resources and hands-on coding experiences, Git Init 2023 not only offered a thrilling coding marathon but also served as a pivotal stepping stone in students' journey towards real-world computer science applications. Empowering, educational, and exhilarating, Git Init 2023 was a milestone in making computer science accessible and engaging for high school students, setting them up for future success in both academics and community contributions.",
+      images: [
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152690078867533954/gitinit.png",
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152690481638158336/image.png",
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152690739931787294/image.png",
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152691665736306798/image.png",
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152691710812504165/image.png",
+        "https://cdn.discordapp.com/attachments/997774498973626418/1152691767951499334/image.png",
+      ],
+    },
   ];
   return (
     <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 py-20 px-4 sm:px-8 md:px-12 lg:px-24 backdrop-filter backdrop-blur-lg bg-white bg-opacity-70">
@@ -54,10 +62,7 @@ export default function OurEvents() {
             index % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >
-          <Carousel
-            className="rounded-xl w-full md:w-[480px] h-[320px] flex-shrink-0"
-            // ... (your carousel props)
-          >
+          <Carousel className="rounded-xl w-full md:w-[480px] h-[320px] flex-shrink-0">
             {event.images.map((img, imgIndex) => (
               <img
                 key={imgIndex}
@@ -70,11 +75,20 @@ export default function OurEvents() {
 
           <div className="w-full md:ml-8 mt-6 md:mt-0 flex flex-col justify-center">
             <Typography
-              variant="h4"
+              variant="h2"
               color="blue-gray"
-              className="font-dm-sans mb-2 text-lg md:text-xl"
+              className="font-dm-sans mb-2 text-bold"
             >
               {event.name}
+            </Typography>
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="font-dm-sans mb-4 text-sm md:text-md"
+            >
+              <a target="_blank" rel="noreferrer" href={event.link}>
+                {event.link}
+              </a>
             </Typography>
             <Typography
               variant="h6"
@@ -83,7 +97,10 @@ export default function OurEvents() {
             >
               {event.date}
             </Typography>
-            <Typography color="blue-gray" className="font-dm-sans text-sm md:text-base">
+            <Typography
+              color="blue-gray"
+              className="font-dm-sans text-sm md:text-base"
+            >
               {event.info}
             </Typography>
           </div>
