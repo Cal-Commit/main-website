@@ -16,19 +16,19 @@ const slideUp = {
 function Hero() {
     return (
         <div className="bg-gradient-to-r from-deep-orange-50 via-deep-orange-100 to-deep-orange-100/30 w-full h-screen flex flex-col justify-center">
-            <div className="container mx-auto text-center">
+            <div className="container mx-auto text-center px-4 md:px-8 lg:px-12 xl:px-24">
 
                 <motion.img 
                     src={logo} 
                     alt="Cal Commit" 
-                    className="bg-gray-100 h-64 w-auto mx-auto  mt-4 rounded-full shadow-lg" 
+                    className="bg-gray-100 h-40 md:h-64 w-auto mx-auto  mt-4 rounded-full shadow-lg" 
                     variants={fadeIn}
                     initial="hidden"
                     animate="visible"
                 />
 
                 <motion.h1 
-                    className="text-gray-900 text-8xl font-bold font-dela-gothic mb-12"
+                    className="text-gray-900 text-4xl md:text-6xl lg:text-8xl font-bold font-dela-gothic mb-6 md:mb-8 lg:mb-12"
                     variants={slideUp}
                     initial="hidden"
                     animate="visible"
@@ -38,7 +38,7 @@ function Hero() {
                 </motion.h1>
                 
                 <motion.p 
-                    className="text-blue-gray-900 text-3xl font-semibold mb-12" 
+                    className="text-blue-gray-900 text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 lg:mb-12" 
                     variants={slideUp}
                     initial="hidden"
                     animate="visible"
