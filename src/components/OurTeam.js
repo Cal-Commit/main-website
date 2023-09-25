@@ -91,6 +91,14 @@ export default function OurTeam() {
 
 function ProfileCard({ member }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [imgFailed, setImgFailed] = useState(false);
+
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("");
+  };
 
   return (
     <Card
@@ -99,16 +107,25 @@ function ProfileCard({ member }) {
       className="font-dm-sans w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-2 my-4 flex flex-col justify-between"
     >
       <CardHeader
-      
         floated={isHovered}
-        className="h-48 sm:h-64 md:h-80 transition-all duration-700 ease-in-out"
+        className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 transition-all duration-700 ease-in-out mx-auto"
       >
-        <img
-          src={member.image}
-          alt="profile"
-          className="object-cover h-full w-full rounded shadow-lg"
-        />
+        {imgFailed ? (
+          <div className="bg-gray-200 h-full w-full flex items-center justify-center">
+            <Typography className="text-5xl font-bold">
+              {getInitials(member.name)}
+            </Typography>
+          </div>
+        ) : (
+          <img
+            src={member.image}
+            alt="profile"
+            className="object-cover h-full w-full mx-auto rounded shadow-lg"
+            onError={() => setImgFailed(true)}
+          />
+        )}
       </CardHeader>
+
       <CardBody className="text-center p-4">
         <Typography
           variant="h4"
