@@ -13,7 +13,7 @@ function AboutLandingComp() {
                 </div>
                 
                 <div className="transform hover:scale-105 transition-transform duration-300 md:w-2/4 flex-shrink-0"> {/* Added flex-shrink-0 */}
-                    <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p090xhqs.jpg" alt="Mission Behind Cal Commit" className="rounded-md shadow-lg w-full h-auto" />
+                    <img src="bearAbout.jpeg" alt="Mission Behind Cal Commit" className="rounded-md shadow-lg w-full h-auto" />
                 </div>
                 
             </div>

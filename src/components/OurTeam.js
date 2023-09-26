@@ -11,7 +11,7 @@ import {
 const teamMembers = [
   {
     name: "Arnav Pandey",
-    image: "https://splitxorpio.github.io/portfolio/picture.png",
+    image: "arnav.png",
     position: "President",
     portfolio: "https://arnavpandey.xyz",
     instagram: "https://instagram.com/arnavpandey722",
@@ -20,14 +20,14 @@ const teamMembers = [
   {
     name: "Rohan Ramakrishnan",
     image:
-      "https://static.wixstatic.com/media/8a7384_4f4eb4ece187481980253a014e735023~mv2.png/v1/crop/x_28,y_16,w_475,h_474/fill/w_253,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Rohan%201.png",
+      "rohan.webp",
     position: "President",
     linkedin: "https://linkedin.com/in/rohan-ramakrishnan-7225a9290/",
   },
   {
     name: "Aditya Sahasranam",
     image:
-      "https://cdn.discordapp.com/attachments/997774498973626418/1122391117296570449/IMG_4747.jpg",
+      "adi.jpeg",
     position: "Vice President",
     portfolio: "https://adityasahas.tech",
     twitter: "https://twitter.com/adityasahas",
@@ -37,28 +37,28 @@ const teamMembers = [
   {
     name: "Srinikesh Kanneluru",
     image:
-      "https://static.wixstatic.com/media/8a7384_c52993baccf54e93910fdc7209a023db~mv2.jpeg/v1/crop/x_0,y_33,w_1213,h_1215/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/image0.jpeg",
+      "kesh.webp",
     position: "Vice President",
     linkedin: "https://linkedin.com/in/srinikeshkanneluru",
   },
   {
     name: "Swayam Shah",
     image:
-      "https://static.wixstatic.com/media/8a7384_b4cbb075bfbc4be99c44f656834059d5~mv2.jpg/v1/crop/x_0,y_6,w_233,h_233/fill/w_253,h_253,al_c,lg_1,q_80,enc_auto/IMG_B460E9285B46-1.jpg",
+      "sway.webp",
     position: "Secretary",
     linkedin: "https://linkedin.com/in/swayam-shah-699aa6235",
   },
   {
     name: "Caitelyn Huang ",
     image:
-      "https://cdn.discordapp.com/attachments/997774498973626418/1123118877983899690/IMG_3724.png",
+      "caitelyn.jpg",
     position: "Treasurer",
     instagram: "https://www.instagram.com/caiitelyn/",
   },
 
   {
     name: "Tiffany Zhang",
-    image: "https://roborally.calcommit.org/tiff.jpg",
+    image: "tiff.jpg",
     position: "Marketing Manager",
     instagram: "instagram.com/tiffzhny",
   },
