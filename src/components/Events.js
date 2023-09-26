@@ -61,7 +61,7 @@ export default function OurEvents() {
             index % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >
-          <Carousel className="rounded-xl w-full md:w-[480px] h-[320px] flex-shrink-0">
+          <Carousel className="rounded-xl w-full md:w-[480px] h-[320px] flex-shrink-0 mt-16">
             {event.images.map((img, imgIndex) => (
               <img
                 key={imgIndex}
@@ -72,7 +72,7 @@ export default function OurEvents() {
             ))}
           </Carousel>
 
-          <div className="w-full md:ml-8 mt-6 md:mt-0 flex flex-col justify-center">
+          <div className="w-full md:ml-8 mt-6 md:mt-0 flex flex-col justify-center mr-16">
             <Typography
               variant="h2"
               color="blue-gray"
@@ -98,7 +98,7 @@ export default function OurEvents() {
             </Typography>
             <Typography
               color="blue-gray"
-              className="font-dm-sans text-sm md:text-base"
+              className="font-dm-sans text-sm md:text-base "
             >
               {event.info}
             </Typography>
