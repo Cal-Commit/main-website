@@ -618,11 +618,15 @@ export default function JoinTeam() {
                                   render={({ field }) => (
                                     <Checkbox
                                       label={
-                                        <Typography className="font-dm-sans font-semibold">
+                                        <Typography className="font-dm-sans font-normal">
                                           {question.label}
                                         </Typography>
                                       }
-                                      {...field}
+                                      checked={field.value}
+                                      onChange={(e) =>
+                                        field.onChange(e.target.checked)
+                                      }
+                                      className="font-dm-sans shadow-lg shadow-gray-900/5"
                                     />
                                   )}
                                 />
