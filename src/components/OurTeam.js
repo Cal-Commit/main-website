@@ -108,7 +108,7 @@ function ProfileCard({ member }) {
     >
       <CardHeader
         floated={isHovered}
-        className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 transition-all duration-700 ease-in-out mx-auto"
+        className="h-48 w-48  transition-all duration-700 ease-in-out mx-auto"
       >
         {imgFailed ? (
           <div className="bg-gray-200 h-full w-full flex items-center justify-center">
