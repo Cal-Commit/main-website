@@ -51,7 +51,7 @@ const teamMembers = [
   {
     name: "Caitelyn Huang ",
     image:
-      "caitelyn.jpg",
+      "caitelyn.png",
     position: "Treasurer",
     instagram: "https://www.instagram.com/caiitelyn/",
   },
