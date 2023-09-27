@@ -216,6 +216,7 @@ export default function JoinTeam() {
       const defaultValue = type === "Checkbox" ? false : "";
       setValue(name, defaultValue);
 
+      // Explicitly setting checkbox value to false
       if (type === "Checkbox") {
         setValue(name, false);
       }
@@ -285,6 +286,8 @@ export default function JoinTeam() {
         discordEmbed
       );
       console.log("Successfully sent to Discord");
+      clearForm();
+
       setAlertVisible(true);
       setTimeout(() => setDisableSubmit(false), 5000);
     } catch (error) {
@@ -456,7 +459,10 @@ export default function JoinTeam() {
                                             {question.label}
                                           </Typography>
                                         }
-                                        {...field}
+                                        checked={field.value}
+                                        onChange={(e) =>
+                                          field.onChange(e.target.checked)
+                                        }
                                         className="font-dm-sans shadow-lg shadow-gray-900/5"
                                       />
                                     )}
@@ -612,11 +618,15 @@ export default function JoinTeam() {
                                   render={({ field }) => (
                                     <Checkbox
                                       label={
-                                        <Typography className="font-dm-sans font-semibold">
+                                        <Typography className="font-dm-sans font-normal">
                                           {question.label}
                                         </Typography>
                                       }
-                                      {...field}
+                                      checked={field.value}
+                                      onChange={(e) =>
+                                        field.onChange(e.target.checked)
+                                      }
+                                      className="font-dm-sans shadow-lg shadow-gray-900/5"
                                     />
                                   )}
                                 />
