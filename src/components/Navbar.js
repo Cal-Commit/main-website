@@ -37,10 +37,22 @@ function CCNavbar() {
           className="transition-all duration-300 ease-in-out p-1 text-md font-dm-sans font-semibold"
           key={item.text}
         >
-          <Link to={item.link} className="relative group">
-            <span>{item.text}</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
-          </Link>
+          {item.text === "Donate" ? (
+            <a
+              href={item.link}
+              className="relative group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{item.text}</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </a>
+          ) : (
+            <Link to={item.link} className="relative group">
+              <span>{item.text}</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-calcommit-orange transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </Link>
+          )}
         </Typography>
       ))}
     </ul>
